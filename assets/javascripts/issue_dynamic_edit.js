@@ -429,9 +429,23 @@ let sendData = function(serialized_data){
 					/* Once we've updated our issue, we have to reset the loadedDate to now to be up to date with the check version */
 					loadedDate = new Date();
 					setCheckVersionInterval(true);
+				} else if (this.status == 0) {
+					// Workaround for server insisting on redirecting (302) to http on POST requests
+					// This gets blocked by the browser and causes the request to fail, even though
+					// the issue is successfully updated.
+					const regex = /^https:\/\/.*\/issues\/(\d+)$/;
+					const match = LOCATION_HREF.match(regex);
+
+					if (match) {
+						console.log("Match found:", match[0]);
+						console.log("Issue number:", match[1]);
+						location.reload();
+					} else {
+						console.log("No match found");
+					}
 				} else {
 					callError(this.status);
-				}
+				} 
 			}
 		};
 		request.send(formData);
