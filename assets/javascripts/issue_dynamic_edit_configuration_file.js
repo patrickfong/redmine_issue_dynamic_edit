@@ -57,4 +57,4 @@ var _CONF_EXCLUDED_FIELD_ID = [];
  * true : will check issue update conflict and prevent current user to update the issue without refreshing the page
  * false : user will be able to update the issue no matter other modification performed (will override modification made by other)
  */
-var _CONF_CHECK_ISSUE_UPDATE_CONFLICT = false;
+var _CONF_CHECK_ISSUE_UPDATE_CONFLICT = true;
