@@ -9,7 +9,7 @@
  * Use this value if you encounter some difficulties with "Mixed content" issues
  * Allowed values : false (default), true
  */
-var _CONF_FORCE_HTTPS = false;
+var _CONF_FORCE_HTTPS = true;
 
 /*
  * _CONF_DISPLAY_EDIT_ICON (string)
@@ -57,4 +57,4 @@ var _CONF_EXCLUDED_FIELD_ID = [];
  * true : will check issue update conflict and prevent current user to update the issue without refreshing the page
  * false : user will be able to update the issue no matter other modification performed (will override modification made by other)
  */
-var _CONF_CHECK_ISSUE_UPDATE_CONFLICT = true;
+var _CONF_CHECK_ISSUE_UPDATE_CONFLICT = false;
